@@ -1,0 +1,38 @@
+{
+  "extName": {
+    "message": "Element Selector"
+  },
+  "extDesc": {
+    "message": "Select and extract content from webpage elements."
+  },
+  "selectProperty": {
+    "message": "select property"
+  },
+  "needSelectProperty": {
+    "message": "Please select a property type"
+  },
+  "text": {
+    "message": "Text"
+  },
+  "html": {
+    "message": "HTML Code"
+  },
+  "custom": {
+    "message": "Custom"
+  },
+  "enterProperty": {
+    "message": "Enter custom property"
+  },
+  "extract": {
+    "message": "Extract"
+  },
+  "noProperty": {
+    "message": "property no found"
+  },
+  "copied": {
+    "message": "Copied"
+  },
+  "tutorial": {
+    "message": "https://dev-coco.github.io/post/Element-Selector-EN/"
+  }
+}

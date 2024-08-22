@@ -1,0 +1,38 @@
+{
+  "extName": {
+    "message": "元素选择器"
+  },
+  "extDesc": {
+    "message": "在网页选择元素并且获取内容。"
+  },
+  "selectProperty": {
+    "message": "选择属性"
+  },
+  "needSelectProperty": {
+    "message": "选择一种属性"
+  },
+  "text": {
+    "message": "文本"
+  },
+  "html": {
+    "message": "HTML 代码"
+  },
+  "custom": {
+    "message": "自定义"
+  },
+  "enterProperty": {
+    "message": "输入自定义元素"
+  },
+  "extract": {
+    "message": "提取"
+  },
+  "noProperty": {
+    "message": "未获取到此元素的内容"
+  },
+  "copied": {
+    "message": "已复制"
+  },
+  "tutorial": {
+    "message": "https://dev-coco.github.io/post/Element-Selector/"
+  }
+}
