@@ -118,6 +118,7 @@ function showOptionsDialog (x, y) {
     <select id="contentType">
       <option value="outerText" selected>${lang('text')}</option>
       <option value="outerHTML">${lang('html')}</option>
+      <option value="XPath">XPath</option>
       <option value="table">table</option>
       <option value="value">value</option>
       <option value="src">src</option>
@@ -158,6 +159,9 @@ function showOptionsDialog (x, y) {
           break
         case 'outerHTML':
           content = selectedElement.outerHTML
+          break
+        case 'XPath':
+          content = getXPath(selectedElement)
           break
         case 'table':
           content = tableToExcel(selectedElement)
@@ -200,4 +204,30 @@ function showOptionsDialog (x, y) {
   dialog.addEventListener('click', function (e) {
     e.stopPropagation()
   })
+}
+
+// 根据 HTML 元素获取 XPath
+function getXPath (element) {
+  if (element.id !== '') {
+    // 如果元素有 ID，则可以使用 ID 直接定位
+    return `//*[@id='${element.id}']`
+  }
+  if (element === document.body) {
+    // 如果元素是 body，则直接返回 /html/body
+    return '/html/body'
+  }
+  let index = 1 // 元素在同级元素中的索引
+  const siblings = element.parentNode ? element.parentNode.children : [] // 只包含元素节点
+  // 找到相同标签名的兄弟元素，计算索引
+  for (let i = 0; i < siblings.length; i++) {
+    const sibling = siblings[i]
+    if (sibling === element) {
+      break
+    }
+    if (sibling.nodeName === element.nodeName) {
+      index++
+    }
+  }
+  // 递归获取父级元素的 XPath
+  return getXPath(element.parentNode) + '/' + element.nodeName.toLowerCase() + (siblings.length > 1 ? `[${index}]` : '')
 }
